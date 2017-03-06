@@ -16,7 +16,7 @@
     "dependencies": {
         "glue": "4.1.0",
         "hapi": "^16.1.0",
-        "hoek": "4.1.0",        
+        "hoek": "4.1.0",
         "unirest": "^0.5.1"
     }
 }
