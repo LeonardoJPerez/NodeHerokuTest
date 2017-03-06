@@ -5,8 +5,9 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "serve": "nodemon --debug .\\src\\init\\server.js",
-        "start": "npm run serve"
+        "monitor": "nodemon .\\src\\init\\server.js",
+        "serve": "node run monitor",
+        "start": "node src/init/server.js"
     },
     "author": "",
     "license": "ISC",
