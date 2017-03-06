@@ -8,7 +8,7 @@ Glue.compose(Manifest, { relativeTo: __dirname }, (err, server) => {
         throw err;
     }
     server.start((err) => {
-        console.log(`Server running at: ${server.connections[0].info.uri}`);
+        console.log(`Server running at: ${server.info.uri}`);
         console.log('Available routes:');
         var info = server.table()[0];
         info.table.forEach((route) => {

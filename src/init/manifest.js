@@ -3,10 +3,8 @@
 module.exports = {
     connections: [
         {
-            // host: 'leo-test-app.herokuapp.com',
-            port: 80,
-            //host: 'localhost',
-            //port: 8031,
+            port: process.env.PORT || 8031,
+            host: '0.0.0.0',
             labels: ['api']
         }
     ],
