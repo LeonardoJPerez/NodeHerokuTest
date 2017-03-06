@@ -5,8 +5,18 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node index.js"
+        "serve": "nodemon --debug .\\src\\init\\server.js",
+        "start": "npm run serve"
     },
     "author": "",
-    "license": "ISC"
+    "license": "ISC",
+    "devDependencies": {
+        "jslint": "^0.10.3"
+    },
+    "dependencies": {
+        "glue": "4.1.0",
+        "hapi": "^16.1.0",
+        "hoek": "4.1.0",        
+        "unirest": "^0.5.1"
+    }
 }
