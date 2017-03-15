@@ -1,23 +1,21 @@
 'use strict';
 
 const locationService = require('./../../../../services/location');
-const membersService = require('./../../../../services/members');
+const temperatureService = require('./../../../../services/temperature/');
 
 module.exports = {
-    getMembersByLocation: {
+    getTemperature: {
         handler: (request, reply) => {
-            locationService.getLocationCoordinates(request.params.zipcode)
+            temperatureService
+                .getTemperature()
                 .then((res) => {
-                    membersService.getMembersByLocation(res.geometry.location)
-                        .then((res) => {
-                            reply(JSON.stringify(res.results, null, 4));
-                        }, (error) => {
-                            reply(JSON.stringify(error, null, 4));
-                        });
+                    reply(JSON.stringify(res, null, 4));
+                }, (error) => {
+                    reply(JSON.stringify(error, null, 4));
                 });
         }
     },
-    getMemberByBioguideId: {
+    getTemperatureFromPressure: {
         handler: (request, reply) => {
             membersService.getMembersByBioguideId(request.params.bid)
                 .then((res) => {

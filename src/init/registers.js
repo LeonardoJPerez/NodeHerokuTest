@@ -4,7 +4,7 @@ const options = {
     uglify: true
 };
 
-module.exports = [
+module.exports = [   
     {
         plugin: {
             register: './../api/v1/location',
@@ -13,7 +13,7 @@ module.exports = [
     },
     {
         plugin: {
-            register: './../api/v1/members',
+            register: './../api/v1/temperature',
             options: options
         }
     }
