@@ -27,6 +27,6 @@ exports.register = function (server, options, next) {
 };
 
 exports.register.attributes = {
-    name: 'members',
+    name: 'temperature',
     version: '1.0.0'
 };
