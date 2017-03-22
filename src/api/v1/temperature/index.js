@@ -11,11 +11,11 @@ exports.register = function (server, options, next) {
             path: options.basePath + '/temperature',
             config: require('./config/read').getTemperature
         },
-        // {
-        //     method: 'GET',
-        //     path: options.basePath + '/member/{bid}',
-        //     config: require('./config/read').getMemberByBioguideId
-        // },
+        {
+            method: 'POST',
+            path: options.basePath + '/temperature',
+            config: require('./config/write').saveTemperature
+        },
         // {
         //     method: 'GET',
         //     path: options.basePath + '/members/search', //?q={argument}

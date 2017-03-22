@@ -21,5 +21,17 @@ module.exports = {
     },
     getTemperatureFromPressure: () => {
 
+    },
+    saveTemperature: (item) => {
+        return new Promise((fulfill, reject) => {
+            DbContext.save((err, item) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    fulfill(item);
+                }
+                return item;
+            });
+        });
     }
 };
