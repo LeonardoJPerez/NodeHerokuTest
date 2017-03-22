@@ -13,7 +13,7 @@ module.exports = {
     server: {
         port: 8831,
         host: 'localhost'
-    }
+    },
     mongo: {
         url: "ds123370.mlab.com",
         port: 23370,
