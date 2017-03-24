@@ -1,1 +1,3 @@
-git 'https://github.com/LeonardoJPerez/NodeHerokuTest.git'
+node {
+    git 'https://github.com/LeonardoJPerez/NodeHerokuTest.git'
+}
