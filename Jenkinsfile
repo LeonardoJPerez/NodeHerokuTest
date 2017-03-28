@@ -15,7 +15,6 @@ if (envVars.containsKey("SKIP_TEST")) {
     skip_test = SKIP_TEST
 }
 
-def err = null
 currentBuild.result = "SUCCESS"
 
 
