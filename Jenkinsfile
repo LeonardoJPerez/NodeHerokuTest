@@ -21,10 +21,6 @@ node () {
 
     try{
 
-        stage(name : 'Checking out code...') {        
-            git changelog: false, poll: false, url: "${script_url}"          
-        }
-
         stage('Checkout') {
             checkout scm
         }
