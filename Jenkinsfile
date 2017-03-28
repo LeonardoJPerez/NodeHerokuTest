@@ -18,7 +18,7 @@ if (envVars.containsKey("SKIP_TEST")) {
 currentBuild.result = "SUCCESS"
 
 
-node (BUILD_NODE) {
+node () {
     git 'https://github.com/LeonardoJPerez/NodeHerokuTest.git'
 
     try{
