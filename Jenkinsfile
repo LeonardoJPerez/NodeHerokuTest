@@ -30,16 +30,16 @@ node () {
         }
 
         stage('Installing npm') {
-            sh 'npm install'
+            bat 'npm install'
         }
 
         stage('Test') {
             //env.NODE_ENV = "test"
             //print "Environment will be : ${env.NODE_ENV}"
 
-            sh 'node -v'
-            sh 'npm prune'       
-            sh 'npm test'
+            bat 'node -v'
+            bat 'npm prune'       
+            bat 'npm test'
         }
     }
     catch(err) {      
