@@ -6,7 +6,6 @@ String script_url = 'https://github.com/LeonardoJPerez/NodeHerokuTest.git'
 boolean skip_test = false
 
 def envVars = env.getEnvironment()
- 
 if (envVars.containsKey("SCRIPT_URL")) {
     script_url = SCRIPT_URL
 }
@@ -17,13 +16,10 @@ if (envVars.containsKey("SKIP_TEST")) {
 
 currentBuild.result = "SUCCESS"
 
-
 node () {
     git 'https://github.com/LeonardoJPerez/NodeHerokuTest.git'
 
     try{
-        stage 'Running Tests...'
-        sh 'node test'
 
         stage(name : 'Checking out code...') {        
             git changelog: false, poll: false, url: "${script_url}"          
@@ -37,7 +33,7 @@ node () {
             sh 'npm install'
         }
 
-        stage 'Test'{
+        stage('Test') {
             //env.NODE_ENV = "test"
             //print "Environment will be : ${env.NODE_ENV}"
 
@@ -50,6 +46,8 @@ node () {
         throw err
     }
     finally{
-        stage 'Clean up'
+        stage ('Clean up'){
+            print "Cleaning up..."
+        }
     }
 }
