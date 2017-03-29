@@ -45,6 +45,7 @@ node () {
     finally{
         stage ('Clean up'){
             print "Cleaning up..."
+            slackSend color: 'bad', message: 'Message from Jenkins Pipeline'
         }
     }
 }
