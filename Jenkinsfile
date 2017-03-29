@@ -29,7 +29,7 @@ node () {
             bat 'npm install'
         }
 
-        stage('Test') {
+        stage('Testing') {
             //env.NODE_ENV = "test"
             //print "Environment will be : ${env.NODE_ENV}"
 
@@ -40,6 +40,7 @@ node () {
     }
     catch(err) {      
         throw err
+        slackSend color: 'bad', message: 'Message from Jenkins Pipeline'
     }
     finally{
         stage ('Clean up'){
